@@ -1,0 +1,49 @@
+{
+  "name": "done-super-app/queryoption",
+  "type": "project",
+  "description": "Package to help with filtering/search/sort in queries",
+  "keywords": [
+    "query",
+    "filtering",
+    "search",
+    "sort"
+  ],
+  "license": [
+    "MIT"
+  ],
+  "require": {
+    "php": "^7.4 || ^8.0"
+  },
+  "require-dev": {
+    "pestphp/pest": "^1.21",
+    "squizlabs/php_codesniffer": "^3.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "DoneSuperApp\\QueryOption\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "Tests/"
+    }
+  },
+  "suggest": {
+    "symfony/http-foundation": "to easilly work with http requests",
+    "illuminate/http": "if you're using Laravel framework",
+    "illuminate/support": "for the Laravel integration",
+    "illuminate/pipeline": "for the Laravel integration"
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "scripts": {
+    "test": [
+      "composer validate --no-interaction",
+      "./vendor/bin/pest",
+      "./vendor/bin/phpcs --standard=PSR2 --encoding=utf-8 --extensions=php src/*"
+    ]
+  }
+}
